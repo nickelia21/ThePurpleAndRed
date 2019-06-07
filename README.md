@@ -5,8 +5,6 @@ It is an educational platform in development.
 
 <kbd><img src="/app/public/images/front-page.png" /></kbd>
 
-##![front page img](/app/public/images/front-page.png)
-
 ## Current Features
 1. Front page
 2. 
