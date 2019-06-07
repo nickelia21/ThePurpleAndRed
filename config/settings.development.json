@@ -1,0 +1,13 @@
+{
+  "defaultAccounts": [
+    { "email": "elianicholas@gmail.com", "password": "flyzabilac", "role": "admin" },
+    { "email": "test@test.com", "password": "password" }
+  ],
+
+  "defaultData": [
+    { "name": "Basket", "quantity": 3, "owner": "elianicholas@gmail.com", "condition": "excellent" },
+    { "name": "Bicycle", "quantity": 2, "owner": "elianicholas@gmail.com", "condition": "poor" },
+    { "name": "Banana", "quantity": 2, "owner": "elianicholas@gmail.com", "condition": "good" },
+    { "name": "Boogie Board", "quantity": 2, "owner": "test@test.com", "condition": "excellent" }
+  ]
+}
