@@ -3,7 +3,9 @@
 ThePurpleAndRed is a private social application for users to connect with eachother and use custom services.
 It is an educational platform in development.
 
-![front page img](/app/public/images/front-page.png)
+<kbd><img src="/app/public/images/front-page.png" /></kbd>
+
+##![front page img](/app/public/images/front-page.png)
 
 ## Current Features
 1. Front page
