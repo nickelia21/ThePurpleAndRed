@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.3.1",
+    "@ionic/react": "0.0.5",
     "bcrypt": "^3.0.6",
     "classnames": "^2.2.6",
     "core-js": "^2.6.4",
