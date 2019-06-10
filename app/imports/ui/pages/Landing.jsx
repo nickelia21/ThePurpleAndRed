@@ -5,18 +5,18 @@ import { Grid, Image } from 'semantic-ui-react';
 class Landing extends React.Component {
   render() {
     return (
-        <Grid verticalAlign='middle' textAlign='center' container>
+      <Grid verticalAlign='middle' textAlign='center' container>
 
-          <Grid.Column width={4}>
-            <Image circular className="w3-button w3-hover-white picSpin" src="/images/husky.png" alt="Husky" tabIndex="1"/>
-          </Grid.Column>
+        <Grid.Column width={4}>
+          <Image circular className="w3-button w3-hover-white picSpin" src="/images/husky.png" alt="Husky" tabIndex="1" />
+        </Grid.Column>
 
-          <Grid.Column width={8}>
-            <h1>Welcome to ThePurpleAndRed</h1>
-            <p>Please sign the fuck in</p>
-          </Grid.Column>
+        <Grid.Column width={8}>
+          <h1>Welcome to ThePurpleAndRed</h1>
+          <p>Please sign the fuck in</p>
+        </Grid.Column>
 
-        </Grid>
+      </Grid>
     );
   }
 }

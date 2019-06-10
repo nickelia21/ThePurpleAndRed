@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
@@ -29,58 +29,59 @@ export default class Signup extends React.Component {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        // browserHistory.push('/login');
+        browserHistory.push('/login');
       }
     });
+    alert('New account created: ' + this.state.email + ' : ' + this.state.password);
   }
 
   /** Display the signup form. */
   render() {
     return (
-        <Container>
-          <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-            <Grid.Column>
-              <Header as="h2" textAlign="center">
-                Register your account
+      <Container>
+        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+          <Grid.Column>
+            <Header as="h2" textAlign="center">
+              Register your account
               </Header>
-              <Form onSubmit={this.handleSubmit}>
-                <Segment raised>
-                  <Form.Input
-                      label="Email"
-                      icon="user"
-                      iconPosition="left"
-                      name="email"
-                      type="email"
-                      placeholder="E-mail address"
-                      onChange={this.handleChange}
-                  />
-                  <Form.Input
-                      label="Password"
-                      icon="lock"
-                      iconPosition="left"
-                      name="password"
-                      placeholder="Password"
-                      type="password"
-                      onChange={this.handleChange}
-                  />
-                  <Form.Button content="Submit"/>
-                </Segment>
-              </Form>
-              <Message>
-                Already have an account? Login <Link to="/signin">here</Link>
-              </Message>
-              {this.state.error === '' ? (
-                  ''
-              ) : (
-                  <Message
-                      error
-                      header="Registration was not successful"
-                      content={this.state.error}
-                  />
+            <Form onSubmit={this.handleSubmit}>
+              <Segment raised>
+                <Form.Input
+                  label="Email"
+                  icon="user"
+                  iconPosition="left"
+                  name="email"
+                  type="email"
+                  placeholder="E-mail address"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Password"
+                  icon="lock"
+                  iconPosition="left"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  onChange={this.handleChange}
+                />
+                <Form.Button content="Submit" />
+              </Segment>
+            </Form>
+            <Message>
+              Already have an account? Login <Link to="/signin">here</Link>
+            </Message>
+            {this.state.error === '' ? (
+              ''
+            ) : (
+                <Message
+                  error
+                  header="Registration was not successful"
+                  content={this.state.error}
+                />
               )}
-            </Grid.Column>
-          </Grid>
-        </Container>
+          </Grid.Column>
+        </Grid>
+      </Container>
     );
   }
 }
