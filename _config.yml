@@ -1,6 +1,6 @@
 title: ThePurpleAndRed
 description: ThePurpleAndRed is a private social application for users to connect with eachother and use custom services.
-google_analytics:
+google_analytics: UA-141689277-1
 show_downloads: true
 theme: jekyll-theme-cayman
 
