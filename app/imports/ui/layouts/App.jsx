@@ -2,19 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
+
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+/** import { withTracker } from 'meteor/react-meteor-data'; */
+
+/** import { Users } from '../../api/users/users.js'; */
+/** import User from '.User.js' */
+
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import Home from '../pages/Home';
-import CoopDBStuff from '../pages/CoopDBStuff';
+import ProfileArea from '../components/ProfileArea';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import SigmaEatsStuff from '../pages/SigmaEatsStuff';
+import SigmaEatsForm from '../pages/SigmaEatsForm';
+import SigmaEatsRequests from '../pages/SigmaEatsRequests';
+import CoopDB from '../pages/CoopDB';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
-import Signin from '../pages/Signin';
-import Signup from '../pages/Signup';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
 import Signout from '../pages/Signout';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -27,10 +35,12 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <ProtectedRoute path="/home" component={Home} />
-            <Route path="/signin" component={Signin} />
-            <Route path="/signup" component={Signup} />
-            <ProtectedRoute path="/coop-db" component={CoopDBStuff} />
-            <ProtectedRoute path="/sigma-eats" component={SigmaEatsStuff} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <ProtectedRoute path="/profile" component={ProfileArea} />
+            <ProtectedRoute path="/sigma-eats-form" component={SigmaEatsForm} />
+            <ProtectedRoute path="/sigma-eats-requests" component={SigmaEatsRequests} />
+            <ProtectedRoute path="/coop-db" component={CoopDB} />
             <ProtectedRoute path="/edit/:_id" component={EditStuff} />
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin} />
             <ProtectedRoute path="/signout" component={Signout} />
@@ -55,7 +65,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       const isLogged = Meteor.userId() !== null;
       return isLogged ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
+        (<Redirect to={{ pathname: '/login', state: { from: props.location } }} />
         );
     }}
   />
@@ -74,7 +84,7 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
       const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
       return (isLogged && isAdmin) ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
+        (<Redirect to={{ pathname: '/login', state: { from: props.location } }} />
         );
     }}
   />
@@ -93,3 +103,9 @@ AdminProtectedRoute.propTypes = {
 };
 
 export default App;
+/** export default withTracker(() => {
+  return {
+    users: Users.find({}).fetch(),
+  };
+})(App);
+ */

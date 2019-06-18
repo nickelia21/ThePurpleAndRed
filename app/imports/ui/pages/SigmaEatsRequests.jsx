@@ -7,7 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class CoopDBStuff extends React.Component {
+class SigmaEatsRequests extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -17,28 +17,33 @@ class CoopDBStuff extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
-          <Header as="h2" textAlign="center">Co-op Database Stuff</Header>
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Quantity</Table.HeaderCell>
-                <Table.HeaderCell>Condition</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
-            </Table.Body>
-          </Table>
-        </Container>
+      <Container>
+        <Header as="h2" textAlign="center">Sigma Eats Requests</Header>
+        <Table celled>
+          <Table.Header>
+            <Table.Row textAlign='center'>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Sigma</Table.HeaderCell>
+              <Table.HeaderCell>Description</Table.HeaderCell>
+              <Table.HeaderCell>Restaurant</Table.HeaderCell>
+              <Table.HeaderCell>Where</Table.HeaderCell>
+              <Table.HeaderCell>Comments</Table.HeaderCell>
+              <Table.HeaderCell>Completed</Table.HeaderCell>
+              <Table.HeaderCell>Edit</Table.HeaderCell>
+              <Table.HeaderCell>Delete</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
+          </Table.Body>
+        </Table>
+      </Container>
     );
   }
 }
 
 /** Require an array of Stuff documents in the props. */
-CoopDBStuff.propTypes = {
+SigmaEatsRequests.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -51,4 +56,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(CoopDBStuff);
+})(SigmaEatsRequests);

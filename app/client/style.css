@@ -1,4 +1,3 @@
-
 /*-------------------------------*/
 /* ThePurpleAndRed - Style Sheet */
 /*-------------------------------*/
@@ -9,10 +8,8 @@
     height: 100%;
 }
 
-.nav-avatar {
-    height: 35px;
-    width: 35px;
-    border: 1px solid white
+.post-avatar {
+    width: 60px;
 }
 
 .picSpin {
@@ -43,4 +40,19 @@
 .fixed_header th,
 .fixed_header td {
     width: 600px;
+}
+
+.no-padding {
+    padding: 0em;
+}
+
+.my-footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.hr-post {
+    margin-left: 7rem;
 }

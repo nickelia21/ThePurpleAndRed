@@ -6,18 +6,15 @@ It is an educational platform in development.
 <kbd><img src="/app/public/images/front-page.png" /></kbd>
 
 ## Current Features
-1. Front page
-2. 
+1. Login and Registration
+2. Home Page and Feed
+3. Sigma Eats
+4. Co-op Database
 
 ## Development Features
 1. User, logins, and authentication
     - connecting to mongodb
 2. User profile picture upload
 3. User change info/settings (which ones should they be allowed to edit?)
-4. Page routing and navigating htmls
-5. Sigma Eats
-    - new html page
-    - form creation
-    - uploading to db
-6. Alumni network (Table of contact information)
-7. Co-op database (also just a table)
+4. Sigma Eats daily limit - 1?
+5. Alumni network (Table of contact information)

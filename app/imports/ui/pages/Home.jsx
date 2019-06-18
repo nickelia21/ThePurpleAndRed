@@ -1,92 +1,128 @@
 import React from 'react';
-import { Grid, Button, Icon, Image, Card } from 'semantic-ui-react';
+import {
+  Grid,
+  Button,
+  Input,
+  Icon,
+  Image,
+  Card,
+  Header,
+  Container,
+  Label,
+  Item,
+} from 'semantic-ui-react';
 
-{/** A simple static component to render some text for the Home Page. */ }
+/** A simple static component to render some text for the Home Page. */
 class Home extends React.Component {
   render() {
     return (
-      <Grid container columns='three'>
+      <Grid padded stackable>
         {/* Left Column */}
-        <Grid.Column>
-          <Card>
+        <Grid.Column className='w3-col m3'>
+          <Card raised fluid>
             <Image src="/images/avatar.png" alt="Avatar" wrapped ui={false} />
             <Card.Content>
-              <Card.Header>Matthew</Card.Header>
+              <Card.Header as='a' className='w3-xlarge w3-padding-16'>Nick Elia</Card.Header>
               <Card.Meta>
                 <span className='date'>Epsilon</span>
               </Card.Meta>
               <Card.Description>
-                Matthew is a musician living in Nashville.
+                I like to surf and party with my boyz!
               </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <p>
+                <Icon name='home' />
+                Philadelphia, PA</p>
+              <p>
+                <Icon name='birthday' />
+                January 20, 1998</p>
             </Card.Content>
             <Card.Content extra>
               <a>
                 <Icon name='user' />
-                22 Friends
+                22 Enemies
               </a>
             </Card.Content>
           </Card>
 
-          <Card>
-            <Image src="/images/avatar.png" alt="Avatar" wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>Matthew</Card.Header>
-              <Card.Meta>
-                <span className='date'>Epsilon</span>
-              </Card.Meta>
-              <Card.Description>
-                Matthew is a musician living in Nashville.
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                22 Friends
-              </a>
-            </Card.Content>
-          </Card>
         </Grid.Column>
 
         {/* Middle Column */}
-        <Grid.Column>
-          <Card>
-            <Image src="/images/avatar.png" alt="Avatar" wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>Matthew</Card.Header>
-              <Card.Meta>
-                <span className='date'>Epsilon</span>
-              </Card.Meta>
-              <Card.Description>
-                Matthew is a musician living in Nashville.
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                22 Friends
-              </a>
-            </Card.Content>
+        <Grid.Column className='w3-col m7'>
+          <Card raised fluid className='w3-padding'>
+            <Container className='w3-padding'>
+              <Input fluid placeholder='Post your shit here...' size='large' /><br />
+              <Button primary>Post</Button>
+            </Container>
           </Card>
+
+          <Card raised fluid className='w3-padding'>
+            <Item className='w3-padding'>
+              <Item.Image as='a' circular floated='left' size='tiny' src="/images/avatar.png" />
+              <span className="w3-right w3-opacity">2 min</span>
+              <br /><br />
+              <Item.Content>
+                <Item.Header as='a' className='w3-xlarge w3-padding-extra-large w3-margin-left'>
+                  Evan Stuart</Item.Header>
+                <hr width='80%' className='hr-post' />
+                <Item.Description>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nulla in leo non nisi feugiat bibendum. Ut at nunc ut metus placerat sodales.
+                  Etiam non neque risus. Aliquam erat volutpat.
+                  Praesent elit libero, egestas et tincidunt sed, finibus ac purus.
+                  Donec pulvinar mi nisl. Proin libero nulla, malesuada vel dapibus eget, volutpat vitae sem.
+                </Item.Description>
+                <br /><br />
+                <Button toggle as='div' negative labelPosition='right' className='w3-right w3-padding'>
+                  <Button negative>
+                    <Icon name='close' />
+                    Dislike
+                  </Button>
+                  <Label as='a' basic color='red' pointing='left'>5</Label>
+                </Button>
+                <Button toggle as='div' positive labelPosition='right' className='w3-right w3-padding'>
+                  <Button positive>
+                    <Icon name='like' />
+                    Like
+                  </Button>
+                  <Label as='a' basic color='green' pointing='left'>69</Label>
+                </Button>
+              </Item.Content>
+            </Item>
+          </Card>
+
         </Grid.Column>
 
         {/* Right Column */}
-        <Grid.Column>
-          <Card>
-            <Image src="/images/avatar.png" alt="Avatar" wrapped ui={false} />
+        <Grid.Column className='w3-col m2'>
+          <Card raised fluid>
+            <Header as='h2' className='w3-padding-large w3-margin-top' textAlign='center'>Events</Header>
             <Card.Content>
-              <Card.Header>Matthew</Card.Header>
-              <Card.Meta>
-                <span className='date'>Epsilon</span>
-              </Card.Meta>
-              <Card.Description>
-                Matthew is a musician living in Nashville.
-              </Card.Description>
+              <Card.Header className='w3-padding-16'>DZ Social</Card.Header>
+              <Card.Content>
+                <p>
+                  <Icon name='calendar' />
+                  Friday, October 13
+                </p>
+                <p>
+                  <Icon name='location arrow' />
+                  Wait
+                </p>
+              </Card.Content>
             </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                22 Friends
-              </a>
+            <Card.Content>
+              <Card.Header className='w3-padding-16'>Semi Formal</Card.Header>
+              <Card.Content>
+                <p>
+                  <Icon name='calendar' />
+                  Saturday, November 6
+                </p>
+                <p>
+                  <Icon name='location arrow' />
+                  Tha Boat
+                </p>
+              </Card.Content>
             </Card.Content>
           </Card>
         </Grid.Column>

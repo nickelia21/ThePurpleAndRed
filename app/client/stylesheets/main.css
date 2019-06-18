@@ -736,12 +736,12 @@ a {
     }
 
     .w3-col.m2 {
-        width: 16.66666%
+        width: 16.66666% !important;
     }
 
     .w3-col.m3,
     .w3-quarter {
-        width: 24.99999%
+        width: 24.99999% !important;
     }
 
     .w3-col.m4,
@@ -759,7 +759,7 @@ a {
     }
 
     .w3-col.m7 {
-        width: 58.33333%
+        width: 58.33333% !important;
     }
 
     .w3-col.m8,
@@ -1183,7 +1183,8 @@ a {
 }
 
 .w3-animate-fading {
-    animation: fading 10s infinite
+    animation: fading 10s;
+    outline: none
 }
 
 @keyframes fading {
@@ -1191,12 +1192,8 @@ a {
         opacity: 0
     }
 
-    50% {
-        opacity: 1
-    }
-
     100% {
-        opacity: 0
+        opacity: 1
     }
 }
 

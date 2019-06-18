@@ -6,12 +6,16 @@ import PropTypes from 'prop-types';
 class StuffItemAdmin extends React.Component {
   render() {
     return (
-        <Table.Row>
-          <Table.Cell>{this.props.stuff.name}</Table.Cell>
-          <Table.Cell>{this.props.stuff.quantity}</Table.Cell>
-          <Table.Cell>{this.props.stuff.condition}</Table.Cell>
-          <Table.Cell>{this.props.stuff.owner}</Table.Cell>
-        </Table.Row>
+      <Table.Row>
+        <Table.Cell>{this.props.stuff.name}</Table.Cell>
+        <Table.Cell>{this.props.stuff.sigma}</Table.Cell>
+        <Table.Cell>{this.props.stuff.description}</Table.Cell>
+        <Table.Cell>{this.props.stuff.restaurant}</Table.Cell>
+        <Table.Cell>{this.props.stuff.where}</Table.Cell>
+        <Table.Cell>{this.props.stuff.comments}</Table.Cell>
+        <Table.Cell>{this.props.stuff.completed.toString()}</Table.Cell>
+        <Table.Cell>{this.props.stuff.owner}</Table.Cell>
+      </Table.Row>
     );
   }
 }

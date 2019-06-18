@@ -1,13 +1,51 @@
 {
-  "defaultAccounts": [
-    { "email": "elianicholas@gmail.com", "password": "flyzabilac", "role": "admin" },
-    { "email": "test@test.com", "password": "password" }
+  "defaultAccounts": [{
+      "email": "elianicholas@gmail.com",
+      "password": "flyzabilac",
+      "role": "admin"
+    },
+    {
+      "email": "test@test.com",
+      "password": "password"
+    }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "elianicholas@gmail.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "elianicholas@gmail.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "elianicholas@gmail.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "test@test.com", "condition": "excellent" }
+  "defaultData": [{
+      "name": "Nick Elia",
+      "sigma": "Jinks",
+      "description": "Niall",
+      "restaurant": "Rebecca's",
+      "where": "Gym",
+      "comments": "Bring this ASAP",
+      "owner": "elianicholas@gmail.com",
+      "completed": true
+    },
+    {
+      "name": "Owen McGovern",
+      "description": "Addie",
+      "restaurant": "Her house",
+      "where": "Cedar",
+      "owner": "owen.mcgovern13@gmail.com",
+      "completed": true
+    },
+    {
+      "name": "Luke O'Neil",
+      "description": "Eggs",
+      "restaurant": "Kitchen",
+      "where": "Snell",
+      "comments": "Bring this ASAP",
+      "owner": "lukeoneil5@gmail.com",
+      "completed": false
+    },
+    {
+      "name": "Test",
+      "sigma": "Test-Sigma",
+      "description": "Test-Description",
+      "restaurant": "Test-Restaurant",
+      "where": "Test-Where",
+      "comments": "Test-Comments",
+      "owner": "test@test.com",
+      "completed": null
+    }
   ]
 }
