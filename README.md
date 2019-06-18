@@ -24,7 +24,7 @@ $ cd ../ThePurpleAndRed/app
 ```
 meteor npm run start
 ```
-3. Connect to the external Mongo DB
+5. (OPTIONAL) If you want to connect to the external Mongo DB
 - I use MongoDB Compass Community since its easier to connect
     - Hostname: thepurpleandred-drykj.azure.mongodb.net
     - Enable SRV Record
