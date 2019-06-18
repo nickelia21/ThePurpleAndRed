@@ -16,7 +16,21 @@ $ git clone https://github.com/nickelia21/ThePurpleAndRed.git
 ```
 $ git clone git@github.com:nickelia21/ThePurpleAndRed.git
 ```
-3. 
+5. CD into repo directory and then into /app
+```
+$ cd ../ThePurpleAndRed/app
+```
+4. Run it bbygrl
+```
+meteor npm run start
+```
+3. Connect to the external Mongo DB
+- I use MongoDB Compass Community since its easier to connect
+    - Hostname: thepurpleandred-drykj.azure.mongodb.net
+    - Enable SRV Record
+    - Username: guest
+    - Password: guest
+
 
 
 ## Current Features
