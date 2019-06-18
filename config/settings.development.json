@@ -45,7 +45,7 @@
       "where": "Test-Where",
       "comments": "Test-Comments",
       "owner": "test@test.com",
-      "completed": null
+      "completed": false
     }
   ]
 }
