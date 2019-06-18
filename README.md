@@ -16,15 +16,19 @@ $ git clone https://github.com/nickelia21/ThePurpleAndRed.git
 ```
 $ git clone git@github.com:nickelia21/ThePurpleAndRed.git
 ```
-5. CD into repo directory and then into /app
+3. CD into repo directory and then into /app
 ```
 $ cd ../ThePurpleAndRed/app
 ```
-4. Run it bbygrl
+4. Change MONGO_URL PATH variable
+```
+export MONGO_URL='mongodb+srv://guest:guest@thepurpleandred-drykj.azure.mongodb.net/main?retryWrites=true&w=majority'
+```
+5. Run it bbygrl
 ```
 meteor npm run start
 ```
-5. (OPTIONAL) If you want to connect to the external Mongo DB
+6. (OPTIONAL) If you want to connect to the external Mongo DB
 - I use MongoDB Compass Community since its easier to connect
     - Hostname: thepurpleandred-drykj.azure.mongodb.net
     - Enable SRV Record
