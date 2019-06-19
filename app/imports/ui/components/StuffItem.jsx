@@ -6,7 +6,7 @@ import { withRouter, Link } from 'react-router-dom';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class StuffItem extends React.Component {
 
-  //handleDelete = () => this.props.stuff.remove();
+  // handleDelete = () => this.props.stuff.remove();
 
   render() {
     return (

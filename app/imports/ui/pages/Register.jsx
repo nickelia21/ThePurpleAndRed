@@ -27,12 +27,14 @@ export default class Register extends React.Component {
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
     const { email, password } = this.state;
+    const text1 = 'New account created! => Email: ';
+    const text2 = 'Password: ';
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         console.log(
-          'New account created! => Email: ' + this.state.email + 'Password: ' + this.state.password,
+          text1 + this.state.email + text2 + this.state.password,
         );
         this.props.history.push('/home');
       }

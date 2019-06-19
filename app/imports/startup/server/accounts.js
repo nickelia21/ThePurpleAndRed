@@ -1,12 +1,6 @@
-import {
-  Meteor
-} from 'meteor/meteor';
-import {
-  Accounts
-} from 'meteor/accounts-base';
-import {
-  Roles
-} from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
+import { Roles } from 'meteor/alanning:roles';
 
 /* eslint-disable no-console */
 
@@ -17,15 +11,12 @@ function createUser(email, password, role) {
     email: email,
     password: password,
   });
-  const roles = ['eboard', 'sigma', 'admin']
+  const roles = ['eboard', 'sigma', 'admin'];
   roles.forEach(function (item) {
     if (role === item) {
       Roles.addUsersToRoles(userID, item);
     }
   });
-  // if (role === 'admin') {
-  //   Roles.addUsersToRoles(userID, 'admin');
-  // }
 }
 
 /** When running app for first time, pass a settings file to set up a default user account. */

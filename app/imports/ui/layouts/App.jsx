@@ -5,7 +5,6 @@ import 'semantic-ui-css/semantic.css';
 
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import { withTracker } from 'meteor/react-meteor-data';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';

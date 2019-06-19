@@ -7,7 +7,6 @@ import {
   Input,
   Header,
   Segment,
-  Button,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Users } from '../../api/users/users.js';
