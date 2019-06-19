@@ -5,6 +5,16 @@
       "role": "admin"
     },
     {
+      "email": "eboard@eboard.com",
+      "password": "eboard",
+      "role": "eboard"
+    },
+    {
+      "email": "sigma@sigma.com",
+      "password": "sigma",
+      "role": "sigma"
+    },
+    {
       "email": "test@test.com",
       "password": "password"
     }

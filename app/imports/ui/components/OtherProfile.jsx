@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import { Users } from '../../api/users/users.js';
 
 /** A simple static component to render some text for the Home Page. */
-class ProfileArea extends React.Component {
+class OtherProfile extends React.Component {
   render() {
     return (
       <Grid container padded stackable>
@@ -27,13 +27,13 @@ class ProfileArea extends React.Component {
                 <span className='date'>Epsilon</span>
               </Card.Meta>
               <Card.Description>
-                Matthew is a musician living in Nashville.
+                Evan is a gay freelance assassin New Jersey.
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
               <a>
-                <Icon name='user' />
-                22 Friends
+                <Icon name='user secret' />
+                69 Enemies
               </a>
             </Card.Content>
           </Card>
@@ -44,18 +44,17 @@ class ProfileArea extends React.Component {
           <Segment raised>
             <Header as='h1'>User Information</Header>
             First Name
-            <Input></Input>
+            <Input disabled></Input>
             Last Name
             <Input disabled></Input>
             Email
             <Input disabled></Input>
             Status
-            <Input></Input>
+            <Input disabled></Input>
             Hometown
-            <Input></Input>
+            <Input disabled></Input>
             Birthday
-            <Input></Input>
-            <Button primary>Submit</Button>
+            <Input disabled></Input>
           </Segment>
         </Grid.Column>
 
@@ -65,8 +64,8 @@ class ProfileArea extends React.Component {
 }
 
 /** Declare the types of all properties. */
-ProfileArea.propTypes = {
+OtherProfile.propTypes = {
   currentUser: PropTypes.string,
 };
 
-export default ProfileArea;
+export default OtherProfile;

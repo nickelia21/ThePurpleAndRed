@@ -5,16 +5,14 @@ import 'semantic-ui-css/semantic.css';
 
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-/** import { withTracker } from 'meteor/react-meteor-data'; */
-
-/** import { Users } from '../../api/users/users.js'; */
-/** import User from '.User.js' */
+import { withTracker } from 'meteor/react-meteor-data';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import Home from '../pages/Home';
-import ProfileArea from '../components/ProfileArea';
+import MyProfile from '../pages/MyProfile';
+import OtherProfile from '../components/OtherProfile';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import SigmaEatsForm from '../pages/SigmaEatsForm';
 import SigmaEatsRequests from '../pages/SigmaEatsRequests';
@@ -37,7 +35,8 @@ class App extends React.Component {
             <ProtectedRoute path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <ProtectedRoute path="/profile" component={ProfileArea} />
+            <Route path="/other-profile" component={OtherProfile} />
+            <ProtectedRoute path="/my-profile" component={MyProfile} />
             <ProtectedRoute path="/sigma-eats-form" component={SigmaEatsForm} />
             <ProtectedRoute path="/sigma-eats-requests" component={SigmaEatsRequests} />
             <ProtectedRoute path="/coop-db" component={CoopDB} />
@@ -103,9 +102,3 @@ AdminProtectedRoute.propTypes = {
 };
 
 export default App;
-/** export default withTracker(() => {
-  return {
-    users: Users.find({}).fetch(),
-  };
-})(App);
- */

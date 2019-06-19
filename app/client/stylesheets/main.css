@@ -746,16 +746,16 @@ a {
 
     .w3-col.m4,
     .w3-third {
-        width: 33.33333%
+        width: 33.33333% !important;
     }
 
     .w3-col.m5 {
-        width: 41.66666%
+        width: 41.66666% !important;
     }
 
     .w3-col.m6,
     .w3-half {
-        width: 49.99999%
+        width: 49.99999% !important;
     }
 
     .w3-col.m7 {
@@ -764,7 +764,7 @@ a {
 
     .w3-col.m8,
     .w3-twothird {
-        width: 66.66666%
+        width: 66.66666% !important;
     }
 
     .w3-col.m9,
@@ -868,15 +868,15 @@ a {
 }
 
 .w3-cell-top {
-    vertical-align: top
+    vertical-align: top !important
 }
 
 .w3-cell-middle {
-    vertical-align: middle
+    vertical-align: middle !important
 }
 
 .w3-cell-bottom {
-    vertical-align: bottom
+    vertical-align: bottom !important
 }
 
 .w3-hide {

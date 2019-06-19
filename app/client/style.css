@@ -56,3 +56,9 @@
 .hr-post {
     margin-left: 7rem;
 }
+
+.my-center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}

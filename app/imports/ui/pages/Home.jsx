@@ -23,11 +23,9 @@ class Home extends React.Component {
             <Image src="/images/avatar.png" alt="Avatar" wrapped ui={false} />
             <Card.Content>
               <Card.Header as='a' className='w3-xlarge w3-padding-16'>Nick Elia</Card.Header>
-              <Card.Meta>
-                <span className='date'>Epsilon</span>
-              </Card.Meta>
+              <Card.Meta>Epsilon</Card.Meta>
               <Card.Description>
-                I like to surf and party with my boyz!
+                I like to party with my boyz!
               </Card.Description>
             </Card.Content>
             <Card.Content extra>

@@ -18,7 +18,7 @@ class SigmaEatsRequests extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">Sigma Eats Requests</Header>
+        <Header as='h2' textAlign='center'>Sigma Eats Requests</Header>
         <Table celled>
           <Table.Header>
             <Table.Row textAlign='center'>

@@ -5,8 +5,12 @@ It is an educational platform in development.
 
 <kbd><img src="/app/public/images/front-page.png" /></kbd>
 
-## To Run:
+## To Run (Mac OSX / Linux):
 1. Install Meteor
+```
+$ curl https://install.meteor.com/ | sh
+```
+
 2. Clone this repo
 - HTTPS:
 ```
@@ -16,37 +20,31 @@ $ git clone https://github.com/nickelia21/ThePurpleAndRed.git
 ```
 $ git clone git@github.com:nickelia21/ThePurpleAndRed.git
 ```
-3. CD into repo directory and then into /app
-```
-$ cd ../ThePurpleAndRed/app
-```
-4. Change MONGO_URL PATH variable
-```
-export MONGO_URL='mongodb+srv://guest:guest@thepurpleandred-drykj.azure.mongodb.net/main?retryWrites=true&w=majority'
-```
-5. Run it bbygrl
-```
-meteor npm run start
-```
-6. (OPTIONAL) If you want to connect to the external Mongo DB
-- I use MongoDB Compass Community since its easier to connect
-    - Hostname: thepurpleandred-drykj.azure.mongodb.net
-    - Enable SRV Record
-    - Username: guest
-    - Password: guest
+
+3. Run the 'run' executible file
+- This automatically connects to the external Mongo Database
+
+4. (OPTIONAL) If you want to connect to the external Mongo DB
+    - I use MongoDB Compass Community since its easier to connect
+        - Hostname: thepurpleandred-drykj.azure.mongodb.net
+        - Enable SRV Record
+        - Username: guest
+        - Password: guest
 
 
 
 ## Current Features
-1. Login and Registration
-2. Home Page and Feed
+1. Users, Logins, Registrations, Roles, and Authentication
+    - Connecting to external MongoDB
+2. Home Page and Feed (not live yet)
 3. Sigma Eats
 4. Co-op Database
 
-## Development Features
-1. User, logins, and authentication
-    - connecting to mongodb
+## In-Development Features
+1. This damn footer
 2. User profile picture upload
 3. User change info/settings (which ones should they be allowed to edit?)
 4. Sigma Eats daily limit - 1?
 5. Alumni network (Table of contact information)
+6. Mobile compatibility
+    - Menu / Nav

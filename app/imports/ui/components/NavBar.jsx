@@ -22,11 +22,11 @@ class NavBar extends React.Component {
         {/* If user signed in, clicking 'ThePurpleAndRed' Item routes to '/home', else '/' */}
         {this.props.currentUser ? (
           <Menu.Item as={NavLink} activeClassName="" exact to="/home">
-            <Header inverted as='h1'>ThePurpleAndRed</Header>
+            <Header inverted as='h2'>ThePurpleAndRed</Header>
           </Menu.Item>
         ) : (
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header inverted as='h1'>ThePurpleAndRed</Header>
+              <Header inverted as='h2'>ThePurpleAndRed</Header>
             </Menu.Item>
           )}
 
@@ -45,11 +45,11 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
         ) : ''}
 
-        {/* User Profile - Email */}
+        {/* Login/Register / User Profile - Email */}
         <Menu.Menu position="right">
-          <Menu.Item>
+          <Menu.Item as='a'>
             {this.props.currentUser === '' ? (
-              <Dropdown item text="Login/Register" pointing="top right" icon={'user'}>
+              <Dropdown text="Login/Register" pointing="top right" icon={'user'}>
                 <Dropdown.Menu>
                   <Dropdown.Item icon="user" text="Login" as={NavLink} exact to="/login" />
                   <Dropdown.Item icon="add user" text="Register" as={NavLink} exact to="/register" />
@@ -67,7 +67,7 @@ class NavBar extends React.Component {
 
         {/* User Profile - Icon */}
         {this.props.currentUser ? (
-          <Menu.Item icon="user" as={NavLink} activeClassName="active" exact to="/user" key='user'></Menu.Item>
+          <Menu.Item icon="user" as={NavLink} activeClassName="active" exact to="/my-profile" key='user' ></Menu.Item>
         ) : ''}
 
       </Menu>
