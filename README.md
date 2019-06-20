@@ -1,6 +1,6 @@
 # ThePurpleAndRed
 
-ThePurpleAndRed is a private social application for users to connect with eachother and use custom services.
+ThePurpleAndRed is a private social network application for users to connect with eachother and use custom services.
 It is an educational platform in development.
 
 <kbd><img src="/app/public/images/front-page.png" /></kbd>
