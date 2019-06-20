@@ -45,9 +45,9 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
         ) : ''}
 
-        {/* Login/Register / User Profile - Email */}
+        {/* Login:Register / User Profile - Email */}
         <Menu.Menu position="right">
-          <Menu.Item as='a'>
+          <Menu.Item>
             {this.props.currentUser === '' ? (
               <Dropdown text="Login/Register" pointing="top right" icon={'user'}>
                 <Dropdown.Menu>
