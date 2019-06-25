@@ -2,25 +2,57 @@
   "defaultAccounts": [{
       "email": "elianicholas@gmail.com",
       "password": "flyzabilac",
-      "role": "admin"
+      "role": "admin",
+      "profile": {
+        "firstName": "Nick",
+        "lastName": "Elia",
+        "status": "Epsilon",
+        "hometown": "Philadelphia, PA",
+        "birthday": "January 20, 1998",
+        "bio": "Hi I'm Nick"
+      }
     },
     {
       "email": "eboard@eboard.com",
       "password": "eboard",
-      "role": "eboard"
+      "role": "eboard",
+      "profile": {
+        "firstName": "Eboard-First",
+        "lastName": "Eboard-Last",
+        "status": "eboard",
+        "hometown": "Boston",
+        "birthday": "1/1/2000",
+        "bio": "I am Eboard"
+      }
     },
     {
       "email": "sigma@sigma.com",
       "password": "sigma",
-      "role": "sigma"
+      "role": "sigma",
+      "profile": {
+        "firstName": "Sigma-First",
+        "lastName": "Sigma-Last",
+        "status": "sigma",
+        "hometown": "Boston",
+        "birthday": "1/1/2000",
+        "bio": "I am Sigma"
+      }
     },
     {
       "email": "test@test.com",
-      "password": "password"
+      "password": "password",
+      "profile": {
+        "firstName": "Test-First",
+        "lastName": "Test-Last",
+        "status": "sigma",
+        "hometown": "Boston",
+        "birthday": "1/1/2000",
+        "bio": "I am Test"
+      }
     }
   ],
 
-  "defaultData": [{
+  "defaultStuff": [{
       "name": "Nick Elia",
       "sigma": "Jinks",
       "description": "Niall",
@@ -56,6 +88,40 @@
       "comments": "Test-Comments",
       "owner": "test@test.com",
       "completed": false
+    }
+  ],
+
+  "defaultPosts": [{
+      "user_id": "KN8voY4ePGJAKcLYK",
+      "name": "Nick Elia",
+      "owner": "elianicholas@gmail.com",
+      "body": "This is the body of a post.",
+      "likes": 6,
+      "dislikes": 5,
+      "posted_at": "2019-06-18T11:47:00.000+00:00",
+      "comments": [{
+          "name": "Luke O'Neil",
+          "comment": "Great post!",
+          "likes": 3,
+          "dislikes": 2
+        },
+        {
+          "name": "Evan Stuart",
+          "comment": "Stupid post!",
+          "likes": 0,
+          "dislikes": 0
+        }
+      ]
+    },
+    {
+      "user_id": "KN8voY4ePGJAKcLYK",
+      "name": "Nick Elia",
+      "owner": "elianicholas@gmail.com",
+      "body": "This is my second post",
+      "likes": 1,
+      "dislikes": 0,
+      "posted_at": "2019-06-18T11:47:00.000+00:00",
+      "comments": [{}]
     }
   ]
 }

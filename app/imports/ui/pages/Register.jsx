@@ -4,7 +4,6 @@ import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-rea
 import { Accounts } from 'meteor/accounts-base';
 import PropTypes from 'prop-types';
 
-
 /**
  * Signup component is similar to signin component, but we attempt to create a new user instead.
  */
@@ -12,7 +11,20 @@ export default class Register extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '' };
+    this.state = {
+      email: '',
+      password: '',
+      error: '',
+      role: '',
+      profile: {
+        firstName: '',
+        lastName: '',
+        status: '',
+        hometown: '',
+        birthday: '',
+        bio: '',
+      }
+    };
     // Ensure that 'this' is bound to this component in these two functions.
     // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,16 +38,28 @@ export default class Register extends React.Component {
 
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
-    const { email, password } = this.state;
-    const text1 = 'New account created! => Email: ';
-    const text2 = 'Password: ';
-    Accounts.createUser({ email, username: email, password }, (err) => {
+
+    var { email, password, role, firstName, lastName, phone, status, hometown, birthday, bio } = this.state;
+    const profile = { firstName, lastName, phone, status, hometown, birthday, bio }
+    const text = 'New account created! => Email: ';
+
+    // Check if status is a role (NOT WORKING)
+    const statuses = ['sigma', 'eboard'];
+    statuses.forEach(function (item) {
+      if (item === status) {
+        role = status;
+      }
+    });
+
+    Accounts.createUser({
+      email, username: email, password, role, profile
+    }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        console.log(
-          text1 + this.state.email + text2 + this.state.password,
-        );
+        console.log(text + this.state.email);
+        console.log(this.state.role);
+        console.log(role);
         this.props.history.push('/home');
       }
     });
@@ -43,6 +67,14 @@ export default class Register extends React.Component {
 
   /** Display the Registration form. */
   render() {
+
+    const statuses = [
+      { key: 's', text: 'Sigma', value: 'sigma' },
+      { key: 'p', text: 'Phi', value: 'phi' },
+      { key: 'e', text: 'Epsilon', value: 'epsilon' },
+      { key: 'x', text: 'E-Board', value: 'eboard' },
+    ]
+
     return (
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
@@ -52,22 +84,71 @@ export default class Register extends React.Component {
               </Header>
             <Form onSubmit={this.handleSubmit}>
               <Segment raised>
-                <Form.Input
+                <Form.Input required
+                  label="First Name"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={this.handleChange}
+                />
+                <Form.Input required
+                  label="Last Name"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={this.handleChange}
+                />
+                <Form.Input required
                   label="Email"
                   icon="user"
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="E-mail address"
+                  placeholder="joe@schmoe.com"
                   onChange={this.handleChange}
                 />
-                <Form.Input
+                <Form.Input required
                   label="Password"
                   icon="lock"
                   iconPosition="left"
                   name="password"
                   placeholder="Password"
                   type="password"
+                  onChange={this.handleChange}
+                />
+                <Form.Input required
+                  label="Phone Number"
+                  name="phone"
+                  placeholder="Phone Number"
+                  type='number'
+                  onChange={this.handleChange}
+                />
+                <Form.Select required
+                  label="Status"
+                  name="status"
+                  placeholder="Status"
+                  options={statuses}
+                  onChange={this.handleChange}
+                />
+                <Form.Input required
+                  label="Hometown"
+                  icon="home"
+                  iconPosition="left"
+                  name="hometown"
+                  placeholder="Hometown"
+                  onChange={this.handleChange}
+                />
+                <Form.Input required
+                  label="Birthday"
+                  icon="birthday cake"
+                  iconPosition="left"
+                  name="birthday"
+                  placeholder="Birthday"
+                  type='date'
+                  onChange={this.handleChange}
+                />
+                <Form.TextArea required
+                  label="Bio"
+                  name="bio"
+                  placeholder="Bio"
                   onChange={this.handleChange}
                 />
                 <Form.Button content="Submit" />

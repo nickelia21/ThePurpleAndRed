@@ -10,6 +10,8 @@ import {
   Button,
   Divider,
 } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 /** A simple static component to render some text for the Home Page. */
@@ -76,4 +78,10 @@ MyProfile.propTypes = {
   currentUser: PropTypes.string,
 };
 
-export default MyProfile;
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const MyProfileContainer = withTracker(() => ({
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+}))(MyProfile);
+
+/** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
+export default withRouter(MyProfileContainer);

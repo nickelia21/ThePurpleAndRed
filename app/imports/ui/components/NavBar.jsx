@@ -12,53 +12,53 @@ import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
-  contextRef = createRef()
+  contextRef = createRef();
 
   render() {
-    const menuStyle = { marginBottom: '20px' };
+    const menuStyle = { marginBottom: '40px' };
 
     return (
       <Menu stackable className="theme-d4" style={menuStyle} attached="top" borderless inverted>
         {/* If user signed in, clicking 'ThePurpleAndRed' Item routes to '/home', else '/' */}
         {this.props.currentUser ? (
-          <Menu.Item as={NavLink} activeClassName="" exact to="/home">
+          <Menu.Item as={NavLink} activeClassName="" exact replace to="/home">
             <Header inverted as='h2'>ThePurpleAndRed</Header>
           </Menu.Item>
         ) : (
-            <Menu.Item as={NavLink} activeClassName="" exact to="/">
+            <Menu.Item as={NavLink} activeClassName="" exact replace to="/">
               <Header inverted as='h2'>ThePurpleAndRed</Header>
             </Menu.Item>
           )}
 
         {/* Sigma Eats Form, Sigma Eats Requests, Co-op Database Tabs */}
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/sigma-eats-form" key='sigma-eats-form'>
+          [<Menu.Item as={NavLink} activeClassName="active" exact replace to="/sigma-eats-form" key='sigma-eats-form'>
             Sigma Eats Form</Menu.Item>,
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/sigma-eats-requests" key='sigma-eats-requests'>
+          <Menu.Item as={NavLink} activeClassName="active" exact replace to="/sigma-eats-requests" key='sigma-eats-requests'>
             Sigma Eats Requests</Menu.Item>,
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/coop-db" key='coop-db'>
+          <Menu.Item as={NavLink} activeClassName="active" exact replace to="/coop-db" key='coop-db'>
             Co-op Database</Menu.Item>]
         ) : ''}
 
         {/* If signed in user is Admin, makes Admin tab available */}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact replace to="/admin" key='admin'>Admin</Menu.Item>
         ) : ''}
 
         {/* Login/Register / User Profile - Email */}
         <Menu.Menu position="right">
-          <Menu.Item as='a'>
+          <Menu.Item >
             {this.props.currentUser === '' ? (
               <Dropdown text="Login/Register" pointing="top right" icon={'user'}>
                 <Dropdown.Menu>
-                  <Dropdown.Item icon="user" text="Login" as={NavLink} exact to="/login" />
-                  <Dropdown.Item icon="add user" text="Register" as={NavLink} exact to="/register" />
+                  <Dropdown.Item icon="user" text="Login" as={NavLink} exact replace to="/login" />
+                  <Dropdown.Item icon="add user" text="Register" as={NavLink} exact replace to="/register" />
                 </Dropdown.Menu>
               </Dropdown>
             ) : (
                 <Dropdown text={this.props.currentUser} pointing="top right">
                   <Dropdown.Menu>
-                    <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout" />
+                    <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact replace to="/signout" />
                   </Dropdown.Menu>
                 </Dropdown>
               )}
@@ -67,7 +67,7 @@ class NavBar extends React.Component {
 
         {/* User Profile - Icon */}
         {this.props.currentUser ? (
-          <Menu.Item icon="user" as={NavLink} activeClassName="active" exact to="/my-profile" key='user' ></Menu.Item>
+          <Menu.Item icon="user" as={NavLink} activeClassName="active" exact replace to="/my-profile" key='user' ></Menu.Item>
         ) : ''}
 
       </Menu>

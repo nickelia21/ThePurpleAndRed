@@ -8,11 +8,14 @@ import {
   Card,
   Header,
   Container,
-  Label,
-  Item,
 } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { withRouter } from 'react-router-dom';
+import PostItem from '../components/PostItem';
 
-/** A simple static component to render some text for the Home Page. */
+
+/** A simple static component to render the Home Page. */
 class Home extends React.Component {
   render() {
     return (
@@ -55,6 +58,9 @@ class Home extends React.Component {
             </Container>
           </Card>
 
+          <PostItem />
+
+          {/* EXAMPLE POST ------>
           <Card raised fluid className='w3-padding'>
             <Item className='w3-padding'>
               <Item.Image as='a' circular floated='left' size='tiny' src="/images/avatar.png" />
@@ -88,7 +94,7 @@ class Home extends React.Component {
                 </Button>
               </Item.Content>
             </Item>
-          </Card>
+          </Card> */}
 
         </Grid.Column>
 
@@ -130,4 +136,15 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+/** Declare the types of all properties. */
+Home.propTypes = {
+  currentUser: PropTypes.string,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const HomeContainer = withTracker(() => ({
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+}))(Home);
+
+/** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
+export default withRouter(HomeContainer);

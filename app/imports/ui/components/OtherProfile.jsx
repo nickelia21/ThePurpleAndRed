@@ -43,7 +43,7 @@ class OtherProfile extends React.Component {
           <Segment raised>
             <Header as='h1'>User Information</Header>
             First Name
-            <Input disabled></Input>
+            <Input readonly=''></Input>
             Last Name
             <Input disabled></Input>
             Email

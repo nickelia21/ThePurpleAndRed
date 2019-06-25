@@ -4,15 +4,19 @@ import { Tracker } from 'meteor/tracker';
 
 /** Create a Meteor collection. */
 const Users = new Mongo.Collection('Users');
-
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const UserSchema = new SimpleSchema({
-  firstName: String,
-  lastName: String,
   email: String,
-  status: String,
-  hometown: String,
-  birthday: Date,
+  password: String,
+  profile: [{
+    firstName: String,
+    lastName: String,
+    phone: String,
+    status: String,
+    hometown: String,
+    birthday: Date,
+    bio: String,
+  }]
 }, {
   tracker: Tracker,
 });
