@@ -19,6 +19,7 @@ export default class Register extends React.Component {
       profile: {
         firstName: '',
         lastName: '',
+        displayName: '',
         status: '',
         hometown: '',
         birthday: '',
@@ -39,8 +40,8 @@ export default class Register extends React.Component {
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
 
-    var { email, password, role, firstName, lastName, phone, status, hometown, birthday, bio } = this.state;
-    const profile = { firstName, lastName, phone, status, hometown, birthday, bio }
+    var { email, password, role, firstName, lastName, displayName, phone, status, hometown, birthday, bio } = this.state;
+    const profile = { firstName, lastName, displayName, phone, status, hometown, birthday, bio }
     const text = 'New account created! => Email: ';
 
     // Check if status is a role (NOT WORKING)
@@ -58,8 +59,6 @@ export default class Register extends React.Component {
         this.setState({ error: err.reason });
       } else {
         console.log(text + this.state.email);
-        console.log(this.state.role);
-        console.log(role);
         this.props.history.push('/home');
       }
     });
@@ -69,10 +68,10 @@ export default class Register extends React.Component {
   render() {
 
     const statuses = [
-      { key: 's', text: 'Sigma', value: 'sigma' },
-      { key: 'p', text: 'Phi', value: 'phi' },
-      { key: 'e', text: 'Epsilon', value: 'epsilon' },
-      { key: 'x', text: 'E-Board', value: 'eboard' },
+      { key: 's', text: 'Sigma', value: 'Sigma' },
+      { key: 'p', text: 'Phi', value: 'Phi' },
+      { key: 'e', text: 'Epsilon', value: 'Epsilon' },
+      { key: 'x', text: 'E-Board', value: 'E-Board' },
     ]
 
     return (
@@ -103,6 +102,14 @@ export default class Register extends React.Component {
                   name="email"
                   type="email"
                   placeholder="joe@schmoe.com"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Display Name"
+                  icon="at"
+                  iconPosition="left"
+                  name="displayName"
+                  placeholder="jeff"
                   onChange={this.handleChange}
                 />
                 <Form.Input required

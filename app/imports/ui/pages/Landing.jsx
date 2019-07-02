@@ -5,7 +5,7 @@ import { Grid, Image } from 'semantic-ui-react';
 class Landing extends React.Component {
   render() {
     return (
-      <Grid container verticalAlign='middle' textAlign='center' className='responsive'>
+      <Grid container verticalAlign='middle' textAlign='center' className='responsive landing'>
 
         <Grid.Column width={4}>
           <Image className="w3-animate-fading picSpin" src="/images/husky.png" alt="Husky" tabIndex="1" />

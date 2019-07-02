@@ -51,7 +51,7 @@ class SigmaEatsForm extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     return (
-      <Grid container centered className='w3-container'>
+      <Grid container centered className='w3-container w3-panel'>
         <Grid.Column>
           <Header as="h2" textAlign="center">Sigma Eats Form</Header>
           <AutoForm ref={(ref) => { this.formRef = ref; }} schema={StuffSchema} onSubmit={this.submit}>

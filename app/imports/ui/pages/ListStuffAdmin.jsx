@@ -18,7 +18,7 @@ class ListStuffAdmin extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">List Stuff (Admin)</Header>
+        <Header as="h1" textAlign="center">List Stuff (Admin)</Header>
         <Table celled>
           <Table.Header>
             <Table.Row>

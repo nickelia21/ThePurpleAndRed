@@ -56,7 +56,13 @@ class PostItem extends React.Component {
 
 /** Require a document to be passed to this component. */
 PostItem.propTypes = {
-  post: PropTypes.object.isRequired,
+  owner: PropTypes.string,
+  name: PropTypes.string,
+  body: PropTypes.string,
+  likes: PropTypes.number,
+  dislikes: PropTypes.number,
+  posted_at: PropTypes.date,
+  comments: PropTypes.Array,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

@@ -6,9 +6,10 @@
       "profile": {
         "firstName": "Nick",
         "lastName": "Elia",
+        "displayName": "Piss Chimp",
         "status": "Epsilon",
         "hometown": "Philadelphia, PA",
-        "birthday": "January 20, 1998",
+        "birthday": "1998-01-20",
         "bio": "Hi I'm Nick"
       }
     },
@@ -19,9 +20,10 @@
       "profile": {
         "firstName": "Eboard-First",
         "lastName": "Eboard-Last",
+        "displayName": "",
         "status": "eboard",
         "hometown": "Boston",
-        "birthday": "1/1/2000",
+        "birthday": "2000-01-01",
         "bio": "I am Eboard"
       }
     },
@@ -32,9 +34,10 @@
       "profile": {
         "firstName": "Sigma-First",
         "lastName": "Sigma-Last",
+        "displayName": "",
         "status": "sigma",
         "hometown": "Boston",
-        "birthday": "1/1/2000",
+        "birthday": "2000-01-01",
         "bio": "I am Sigma"
       }
     },
@@ -44,9 +47,10 @@
       "profile": {
         "firstName": "Test-First",
         "lastName": "Test-Last",
+        "displayName": "",
         "status": "sigma",
         "hometown": "Boston",
-        "birthday": "1/1/2000",
+        "birthday": "2000-01-01",
         "bio": "I am Test"
       }
     }
@@ -92,7 +96,6 @@
   ],
 
   "defaultPosts": [{
-      "user_id": "KN8voY4ePGJAKcLYK",
       "name": "Nick Elia",
       "owner": "elianicholas@gmail.com",
       "body": "This is the body of a post.",
@@ -114,7 +117,6 @@
       ]
     },
     {
-      "user_id": "KN8voY4ePGJAKcLYK",
       "name": "Nick Elia",
       "owner": "elianicholas@gmail.com",
       "body": "This is my second post",
