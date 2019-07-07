@@ -15,7 +15,7 @@ class NavBar extends React.Component {
   contextRef = createRef();
 
   render() {
-    const menuStyle = { marginBottom: '40px' };
+    const menuStyle = { marginBottom: '20px' };
 
     return (
       <Menu stackable className="theme-d4" style={menuStyle} attached="top" borderless inverted>
@@ -31,13 +31,29 @@ class NavBar extends React.Component {
           )}
 
         {/* Sigma Eats Form, Sigma Eats Requests, Co-op Database Tabs */}
-        {this.props.currentUser ? (
+        {/* {this.props.currentUser ? (
           [<Menu.Item as={NavLink} activeClassName="active" exact replace to="/sigma-eats-form" key='sigma-eats-form'>
             Sigma Eats Form</Menu.Item>,
           <Menu.Item as={NavLink} activeClassName="active" exact replace to="/sigma-eats-requests" key='sigma-eats-requests'>
             Sigma Eats Requests</Menu.Item>,
           <Menu.Item as={NavLink} activeClassName="active" exact replace to="/coop-db" key='coop-db'>
             Co-op Database</Menu.Item>]
+        ) : ''} 
+        */}
+
+        {this.props.currentUser ? (
+          <Menu.Menu>
+            <Menu.Item>
+              <Dropdown text="Sigma Eats" pointing='top right'>
+                <Dropdown.Menu>
+                  <Dropdown.Item icon="wpforms" text="Form" as={NavLink} exact replace to="/sigma-eats-form" />
+                  <Dropdown.Item icon="list" text="Requests" as={NavLink} exact replace to="/sigma-eats-requests" />
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>
+            <Menu.Item as={NavLink} activeClassName="active" exact replace to="/coop-db" key='coop-db'>
+              Co-op Database</Menu.Item>
+          </Menu.Menu>
         ) : ''}
 
         {/* If signed in user is Admin, makes Admin tab available */}

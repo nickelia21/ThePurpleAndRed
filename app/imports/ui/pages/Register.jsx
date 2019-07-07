@@ -52,6 +52,11 @@ export default class Register extends React.Component {
       }
     });
 
+    // If not provided, fills in 'undefined' displayName with empty string ("")
+    if (this.state.profile.displayName == '') {
+      //this.state.profile.displayName == "test";
+    }
+
     Accounts.createUser({
       email, username: email, password, role, profile
     }, (err) => {

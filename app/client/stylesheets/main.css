@@ -1132,8 +1132,8 @@ a {
 }
 
 .w3-panel {
-    margin-top: 16px;
-    margin-bottom: 16px
+    margin-top: 16px !important;
+    margin-bottom: 16px !important
 }
 
 .w3-code,

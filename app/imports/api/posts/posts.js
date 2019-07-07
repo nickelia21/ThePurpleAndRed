@@ -7,7 +7,6 @@ const Posts = new Mongo.Collection('Posts');
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const PostSchema = new SimpleSchema({
-  user_id: String,
   name: String,
   owner: String,
   body: String,

@@ -13,8 +13,6 @@ var postData = Meteor.settings.defaultPosts;
 if (Posts.find().count() === 0) {
   if (postData) {
     console.log('Creating default posts.');
-    console.log(postData[0].comments);
-    
     postData.map(data => addData(data));
   };
   /** This subscription publishes only the documents associated with the logged in user */

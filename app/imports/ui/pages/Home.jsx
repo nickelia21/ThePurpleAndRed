@@ -31,7 +31,7 @@ class Home extends React.Component {
 
   renderPosts() {
     let postData = Posts.find({}).fetch();
-    console.log(Posts.find({}).fetch());
+    console.log(postData);
     return postData.map((post) => (
       <PostItem key={post._id} post={post} />
     ));

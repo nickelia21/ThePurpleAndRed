@@ -11,11 +11,16 @@ const UserSchema = new SimpleSchema({
   profile: [{
     firstName: String,
     lastName: String,
+    displayName: String,
     phone: String,
     status: String,
     hometown: String,
     birthday: Date,
     bio: String,
+    // profPic: {
+    //   data: Buffer,
+    //   contentType: String,
+    // },
   }]
 }, {
   tracker: Tracker,

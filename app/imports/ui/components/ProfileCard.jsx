@@ -3,6 +3,7 @@ import {
   Icon,
   Image,
   Card,
+  Divider,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -13,8 +14,8 @@ import { changeDateFormat } from '../../api/users/functions'
 class ProfileCard extends React.Component {
 
   renderDisplayName() {
-    if (Meteor.user().profile.displayName != '') {
-      return <Card.Header className='w3-large w3-padding-16'>{this.props.displayName}</Card.Header>
+    if (this.props.displayName !== undefined) {
+      return <Card.Header className='w3-medium w3-padding-16'>{this.props.displayName}</Card.Header>
     }
   }
 
@@ -23,7 +24,8 @@ class ProfileCard extends React.Component {
       <Card raised fluid>
         <Image src="/images/avatar.png" alt="Avatar" wrapped ui={false} />
         <Card.Content>
-          <Card.Header className='w3-xlarge w3-padding-16'>{this.props.firstName + ' ' + this.props.lastName}</Card.Header>
+          <Card.Header className='w3-xlarge w3-padding-16' textAlign='center'>{this.props.firstName + ' ' + this.props.lastName}</Card.Header>
+          <Divider />
           {this.renderDisplayName()}
           <Card.Meta>{this.props.status}</Card.Meta>
           <Card.Description>{this.props.bio}</Card.Description>

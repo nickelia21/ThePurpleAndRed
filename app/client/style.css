@@ -43,7 +43,7 @@
 }
 
 .no-padding {
-    padding: 0em;
+    padding: 0em !important;
 }
 
 .my-footer {
@@ -54,11 +54,21 @@
 }
 
 .hr-post {
-    margin-left: 7rem;
+    margin-left: 7rem !important;
 }
 
 .my-center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+    margin: auto !important;
+    width: 50% !important;
+    padding: 10px !important;
+}
+
+.landing {
+    margin-top: 4.6em !important;
+    margin-bottom: 4.6em !important;
+}
+
+.sign-out {
+    margin-top: 15em !important;
+    margin-bottom: 15em !important;
 }

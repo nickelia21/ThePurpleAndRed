@@ -1,59 +1,52 @@
 import React from 'react';
 import {
   Grid,
-  Icon,
-  Image,
-  Card,
-  Input,
   Header,
   Segment,
+  Divider,
+  TextArea,
+  Form,
 } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Users } from '../../api/users/users.js';
+import ProfileCard from '../components/ProfileCard';
+import { changeDateFormat } from '../../api/users/functions'
 
 /** A simple static component to render some text for the Home Page. */
 class OtherProfile extends React.Component {
+
   render() {
     return (
-      <Grid container padded stackable>
+      <Grid padded stackable>
         {/* Left Column */}
         <Grid.Column className='w3-third'>
-          <Card raised>
-            <Image src="/images/avatar.png" alt="Avatar" wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>{Users.firstName} + {Users.lastName}</Card.Header>
-              <Card.Meta>
-                <span className='date'>Epsilon</span>
-              </Card.Meta>
-              <Card.Description>
-                Evan is a gay freelance assassin New Jersey.
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user secret' />
-                69 Enemies
-              </a>
-            </Card.Content>
-          </Card>
+          <ProfileCard />
         </Grid.Column>
 
         {/* Right Column */}
         <Grid.Column className='w3-twothird'>
-          <Segment raised>
-            <Header as='h1'>User Information</Header>
-            First Name
-            <Input readonly=''></Input>
-            Last Name
-            <Input disabled></Input>
-            Email
-            <Input disabled></Input>
-            Status
-            <Input disabled></Input>
-            Hometown
-            <Input disabled></Input>
-            Birthday
-            <Input disabled></Input>
+          <Segment raised className='w3-padding'>
+            <Header as='h1' textAlign='center' className='w3-padding'>User Information</Header>
+            <Divider hidden />
+            <Form>
+              <TextArea placeholder={'First Name:' + this.props.firstName} />
+            </Form>
+            <Divider hidden />
+            <Header as='h3'>Last Name: {this.props.lastName}</Header>
+            <Divider hidden />
+            <Header as='h3'>Email: {this.props.email}</Header>
+            <Divider hidden />
+            <Header as='h3'>Display Name: {this.props.displayName}</Header>
+            <Divider hidden />
+            <Header as='h3'>Status: {this.props.status}</Header>
+            <Divider hidden />
+            <Header as='h3'>Hometown: {this.props.hometown}</Header>
+            <Divider hidden />
+            <Header as='h3'>Birthday: {changeDateFormat(this.props.birthday)}</Header>
+            <Divider hidden />
+            <Header as='h3'>Bio: {this.props.bio}</Header>
+            <Divider hidden />
           </Segment>
         </Grid.Column>
 
@@ -64,7 +57,27 @@ class OtherProfile extends React.Component {
 
 /** Declare the types of all properties. */
 OtherProfile.propTypes = {
-  currentUser: PropTypes.string,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  displayName: PropTypes.string,
+  status: PropTypes.string.isRequired,
+  hometown: PropTypes.string.isRequired,
+  birthday: PropTypes.string.isRequired,
+  bio: PropTypes.string,
 };
 
-export default OtherProfile;
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const OtherProfileContainer = withTracker(() => ({
+  firstName: Meteor.user() ? Meteor.user().profile.firstName : '',
+  lastName: Meteor.user() ? Meteor.user().profile.lastName : '',
+  email: Meteor.user() ? Meteor.user().username : '',
+  displayName: Meteor.user() ? Meteor.user().profile.displayName : '',
+  status: Meteor.user() ? Meteor.user().profile.status : '',
+  hometown: Meteor.user() ? Meteor.user().profile.hometown : '',
+  birthday: Meteor.user() ? Meteor.user().profile.birthday : '',
+  bio: Meteor.user() ? Meteor.user().profile.bio : '',
+}))(OtherProfile);
+
+/** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
+export default withRouter(OtherProfileContainer);
