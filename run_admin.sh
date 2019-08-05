@@ -1,3 +1,3 @@
 cd
 cd METEOR/ThePurpleAndRed/app
-MONGO_URL=mongodb+srv://nickelia21:FLY_zabilac21@thepurpleandred-drykj.azure.mongodb.net/main meteor npm start
+MONGO_URL=mongodb+srv://nickelia:FLY_zabilac21@thepurpleandred-drykj.azure.mongodb.net/main meteor npm start
