@@ -30,17 +30,6 @@ class NavBar extends React.Component {
             </Menu.Item>
           )}
 
-        {/* Sigma Eats Form, Sigma Eats Requests, Co-op Database Tabs */}
-        {/* {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact replace to="/sigma-eats-form" key='sigma-eats-form'>
-            Sigma Eats Form</Menu.Item>,
-          <Menu.Item as={NavLink} activeClassName="active" exact replace to="/sigma-eats-requests" key='sigma-eats-requests'>
-            Sigma Eats Requests</Menu.Item>,
-          <Menu.Item as={NavLink} activeClassName="active" exact replace to="/coop-db" key='coop-db'>
-            Co-op Database</Menu.Item>]
-        ) : ''} 
-        */}
-
         {this.props.currentUser ? (
           <Menu.Menu>
             <Menu.Item>
@@ -51,8 +40,12 @@ class NavBar extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>
+            {/* Co-op Database */}
             <Menu.Item as={NavLink} activeClassName="active" exact replace to="/coop-db" key='coop-db'>
               Co-op Database</Menu.Item>
+            {/* Alumni Network */}
+            <Menu.Item as={NavLink} activeClassName="active" exact replace to="/alumni" key='alumni'>
+              Alumni Network</Menu.Item>
           </Menu.Menu>
         ) : ''}
 

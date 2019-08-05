@@ -6,7 +6,7 @@ class CoopDB extends React.Component {
   render() {
     return (
       <Header as="h2" textAlign="center">
-        <p>Co-op Database</p>
+        <p>Alumni Network</p>
       </Header>
     );
   }

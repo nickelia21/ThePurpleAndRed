@@ -64,11 +64,29 @@
 }
 
 .landing {
-    margin-top: 4.6em !important;
-    margin-bottom: 4.6em !important;
+    margin-top: 4.4em !important;
+    margin-bottom: 4.4em !important;
 }
 
 .sign-out {
     margin-top: 15em !important;
     margin-bottom: 15em !important;
+}
+
+.sign-in {
+    margin-top: 4em !important;
+    margin-bottom: 4em !important;
+}
+
+.not-found {
+    margin-top: 6.55em !important;
+    margin-bottom: 6.55em !important;
+}
+
+footer {
+    background-color: black;
+    clear: both;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

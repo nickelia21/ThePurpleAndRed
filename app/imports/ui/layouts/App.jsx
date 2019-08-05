@@ -16,6 +16,7 @@ import ListStuffAdmin from '../pages/ListStuffAdmin';
 import SigmaEatsForm from '../pages/SigmaEatsForm';
 import SigmaEatsRequests from '../pages/SigmaEatsRequests';
 import CoopDB from '../pages/CoopDB';
+import Alumni from '../pages/Alumni';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Login from '../pages/Login';
@@ -39,6 +40,7 @@ class App extends React.Component {
             <ProtectedRoute path="/sigma-eats-form" component={SigmaEatsForm} />
             <ProtectedRoute path="/sigma-eats-requests" component={SigmaEatsRequests} />
             <ProtectedRoute path="/coop-db" component={CoopDB} />
+            <ProtectedRoute path="/alumni" component={Alumni} />
             <ProtectedRoute path="/edit/:_id" component={EditStuff} />
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin} />
             <ProtectedRoute path="/signout" component={Signout} />

@@ -15,12 +15,14 @@ class NotFound extends React.Component {
 
   render() {
     return (
-      <Container textAlign='center' className='w3-panel'>
-        <Header as="h1">Poof! You&apos;re gay!</Header>
+      <Container textAlign='center' className='not-found'>
+        <Header as="h1">POOF... You&apos;re gay!</Header>
         <Divider />
         <Header as="h3">Just kidding, but I bet you wish you were.</Header>
         <Divider hidden />
         <Header as="h3">Why don&apos;t you just go back home kid.</Header>
+        <Divider hidden />
+        <Divider hidden />
         <Divider hidden />
         <Button primary size='huge' onClick={this.redirectHome}>Go Home</Button>
       </Container>
