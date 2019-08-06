@@ -18,7 +18,7 @@ class NavBar extends React.Component {
     const menuStyle = { marginBottom: '20px' };
 
     return (
-      <Menu stackable className="theme-d4" style={menuStyle} attached="top" borderless inverted>
+      <Menu stackable style={menuStyle} className="theme-d4" fixed="top" borderless inverted>
         {/* If user signed in, clicking 'ThePurpleAndRed' Item routes to '/home', else '/' */}
         {this.props.currentUser ? (
           <Menu.Item as={NavLink} activeClassName="" exact replace to="/home">
