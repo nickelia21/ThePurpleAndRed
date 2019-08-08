@@ -90,3 +90,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.nav {
+    padding-top: 5 rem !important;
+}

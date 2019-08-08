@@ -15,8 +15,7 @@ class NavBar extends React.Component {
   contextRef = createRef();
 
   render() {
-    const menuStyle = { marginBottom: '20px' };
-
+    const menuStyle = { marginTop: '80px'};
     return (
       <Menu stackable style={menuStyle} className="theme-d4" fixed="top" borderless inverted>
         {/* If user signed in, clicking 'ThePurpleAndRed' Item routes to '/home', else '/' */}

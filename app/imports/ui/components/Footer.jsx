@@ -9,9 +9,11 @@ import {
 
 class Footer extends React.Component {
   render() {
+    const footerStyle = { marginTop: '40px', padding: '2rem 0rem' };
+
     return (
       <footer>
-        <Segment inverted vertical className='theme-d4 footer' style={{ padding: '2rem 0rem' }}>
+        <Segment inverted vertical className='theme-d4 footer' style={ footerStyle }>
           <Container textAlign='center'>
             <Image centered size='mini' className="picSpin" src="/images/husky.png" alt="Husky" tabIndex="1" />
             <Divider inverted section />
