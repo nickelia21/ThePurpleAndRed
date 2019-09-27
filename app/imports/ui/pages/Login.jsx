@@ -47,7 +47,7 @@ export default class Login extends React.Component {
     // Otherwise return the Login form.
     return (
       <Container className='sign-in'>
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+        <Grid textAlign="center" verticalAlign="middle" centered columns={2} className='nav'>
           <Grid.Column>
             <Header as="h2" textAlign="center">
               Login to your account

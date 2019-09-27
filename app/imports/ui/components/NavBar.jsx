@@ -15,10 +15,10 @@ class NavBar extends React.Component {
   contextRef = createRef();
 
   render() {
-    const menuStyle = { marginTop: '20px' };
+    const menuStyle = { marginTop: '0px' };
     return (
       <Menu stackable style={menuStyle} className="theme-d4" fixed="top" borderless inverted>
-        {/* If user signed in, clicking 'ThePurpleAndRed' Item routes to '/home', else '/' */}
+        {/*   If user signed in, clicking 'ThePurpleAndRed' Item routes to '/home', else '/'   */}
         {this.props.currentUser ? (
           <Menu.Item as={NavLink} activeClassName="" exact to="/home">
             <Header inverted as='h2'>ThePurpleAndRed</Header>

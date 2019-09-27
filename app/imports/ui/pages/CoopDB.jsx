@@ -5,7 +5,7 @@ import { Header } from 'semantic-ui-react';
 class CoopDB extends React.Component {
   render() {
     return (
-      <Header as="h2" textAlign="center">
+      <Header as="h2" textAlign="center" className='nav'>
         <p>Co-op Database</p>
       </Header>
     );

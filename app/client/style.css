@@ -92,5 +92,9 @@ footer {
 }
 
 .nav {
-    padding-top: 5 rem !important;
+    padding-top: 4rem !important;
+}
+
+.login-register {
+    padding-top: 6rem !important;
 }

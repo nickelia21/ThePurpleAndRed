@@ -80,7 +80,7 @@ export default class Register extends React.Component {
     ]
 
     return (
-      <Container>
+      <Container className='login-register'>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">

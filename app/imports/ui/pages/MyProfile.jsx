@@ -18,7 +18,7 @@ class MyProfile extends React.Component {
 
   render() {
     return (
-      <Grid padded stackable>
+      <Grid padded stackable className='nav'>
         {/* Left Column */}
         <Grid.Column className='w3-third'>
           <ProfileCard />

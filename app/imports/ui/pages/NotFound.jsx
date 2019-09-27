@@ -15,7 +15,7 @@ class NotFound extends React.Component {
 
   render() {
     return (
-      <Container textAlign='center' className='not-found'>
+      <Container textAlign='center' className='not-found nav'>
         <Header as="h1">POOF... You&apos;re gay!</Header>
         <Divider />
         <Header as="h3">Just kidding, but I bet you wish you were.</Header>
