@@ -55,11 +55,7 @@ class NavBar extends React.Component {
 
         {/* Login:Register / User Profile - Email */}
         <Menu.Menu position="right">
-<<<<<<< HEAD
-          <Menu.Item >
-=======
           <Menu.Item>
->>>>>>> master
             {this.props.currentUser === '' ? (
               <Dropdown text="Login/Register" pointing="top right" icon={'user'}>
                 <Dropdown.Menu>
