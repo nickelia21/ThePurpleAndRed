@@ -20,11 +20,11 @@ class NavBar extends React.Component {
       <Menu stackable style={menuStyle} className="theme-d4" fixed="top" borderless inverted>
         {/* If user signed in, clicking 'ThePurpleAndRed' Item routes to '/home', else '/' */}
         {this.props.currentUser ? (
-          <Menu.Item as={NavLink} activeClassName="" exact replace to="/home">
+          <Menu.Item as={NavLink} activeClassName="" exact to="/home">
             <Header inverted as='h2'>ThePurpleAndRed</Header>
           </Menu.Item>
         ) : (
-            <Menu.Item as={NavLink} activeClassName="" exact replace to="/">
+            <Menu.Item as={NavLink} activeClassName="" exact to="/">
               <Header inverted as='h2'>ThePurpleAndRed</Header>
             </Menu.Item>
           )}
@@ -53,9 +53,13 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="active" exact replace to="/admin" key='admin'>Admin</Menu.Item>
         ) : ''}
 
-        {/* Login/Register / User Profile - Email */}
+        {/* Login:Register / User Profile - Email */}
         <Menu.Menu position="right">
+<<<<<<< HEAD
           <Menu.Item >
+=======
+          <Menu.Item>
+>>>>>>> master
             {this.props.currentUser === '' ? (
               <Dropdown text="Login/Register" pointing="top right" icon={'user'}>
                 <Dropdown.Menu>

@@ -32,6 +32,9 @@ $ git clone git@github.com:nickelia21/ThePurpleAndRed.git
         - Password: guest
 
 
+## To Run (Windows) - Coming Soon!:
+
+
 
 ## Current Features
 1. Users, Logins, Registrations, Roles, and Authentication
