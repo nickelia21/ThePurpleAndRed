@@ -10,7 +10,8 @@
         "status": "Epsilon",
         "hometown": "Philadelphia, PA",
         "birthday": "1998-01-20",
-        "bio": "Hi I'm Nick"
+        "bio": "Hi I'm Nick",
+        "enemies": 0
       }
     },
     {
@@ -24,7 +25,8 @@
         "status": "eboard",
         "hometown": "Boston",
         "birthday": "2000-01-01",
-        "bio": "I am Eboard"
+        "bio": "I am Eboard",
+        "enemies": 0
       }
     },
     {
@@ -38,7 +40,8 @@
         "status": "sigma",
         "hometown": "Boston",
         "birthday": "2000-01-01",
-        "bio": "I am Sigma"
+        "bio": "I am Sigma",
+        "enemies": 0
       }
     },
     {
@@ -51,7 +54,8 @@
         "status": "sigma",
         "hometown": "Boston",
         "birthday": "2000-01-01",
-        "bio": "I am Test"
+        "bio": "I am Test",
+        "enemies": 0
       }
     }
   ],

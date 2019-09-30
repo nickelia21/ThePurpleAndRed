@@ -60,7 +60,8 @@
 .my-center {
     margin: auto !important;
     width: 50% !important;
-    padding: 10px !important;
+    padding-top: 18rem !important;
+    padding-bottom: 18rem !important;
 }
 
 .landing {
@@ -92,7 +93,7 @@ footer {
 }
 
 .nav {
-    padding-top: 4rem !important;
+    padding-top: 5rem !important;
 }
 
 .login-register {

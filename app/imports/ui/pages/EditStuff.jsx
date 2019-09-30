@@ -32,7 +32,7 @@ class EditStuff extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-      <Grid container centered>
+      <Grid container centered className='nav'>
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit Stuff</Header>
           <AutoForm schema={StuffSchema} onSubmit={this.submit} model={this.props.doc}>

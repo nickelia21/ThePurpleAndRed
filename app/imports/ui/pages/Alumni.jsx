@@ -5,7 +5,7 @@ import { Header, Grid } from 'semantic-ui-react';
 class CoopDB extends React.Component {
   render() {
     return (
-      <Grid className='nav'>
+      <Grid container centered className='nav'>
         <Header as="h2" textAlign="center">
           <p>Alumni Network</p>
         </Header>
