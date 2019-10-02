@@ -59,6 +59,7 @@ ProfileCard.propTypes = {
   hometown: PropTypes.string.isRequired,
   birthday: PropTypes.string.isRequired,
   bio: PropTypes.string,
+  bio: PropTypes.double.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -71,6 +72,7 @@ const ProfileCardContainer = withTracker(() => ({
   hometown: Meteor.user() ? Meteor.user().profile.hometown : '',
   birthday: Meteor.user() ? Meteor.user().profile.birthday : '',
   bio: Meteor.user() ? Meteor.user().profile.bio : '',
+  enemies: Meteor.user() ? Meteor.user().profile.enemies : 0,
 }))(ProfileCard);
 
 /** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
