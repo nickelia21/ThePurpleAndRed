@@ -17,13 +17,21 @@ const UserSchema = new SimpleSchema({
     hometown: String,
     birthday: Date,
     bio: String,
+    enemies: Number,
     // profPic: {
     //   data: Buffer,
     //   contentType: String,
     // },
   }]
 }, {
-  tracker: Tracker,
+    tracker: Tracker,
+  });
+
+/** Deny all client-side updates on the Users collection  */
+Users.deny({
+  insert() { return true; },
+  update() { return true; },
+  remove() { return true; },
 });
 
 /** Attach this schema to the collection. */

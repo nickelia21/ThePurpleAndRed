@@ -22,7 +22,14 @@ const StuffSchema = new SimpleSchema({
   owner: String,
   completed: Boolean,
 }, {
-  tracker: Tracker,
+    tracker: Tracker,
+  });
+
+/** Deny all client-side updates on the Stuffs collection  */
+Stuffs.deny({
+  insert() { return true; },
+  update() { return true; },
+  remove() { return true; },
 });
 
 /** Attach this schema to the collection. */

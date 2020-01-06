@@ -41,7 +41,7 @@ class ProfileCard extends React.Component {
         <Card.Content extra>
           <a>
             <Icon name='user' />
-            {this.props.enemies + 'FIX THIS --> ' + 'Enemies'}
+            {String(this.props.enemies) + 'FIX THIS --> ' + ' Enemies'}
           </a>
         </Card.Content>
       </Card>
@@ -59,7 +59,7 @@ ProfileCard.propTypes = {
   hometown: PropTypes.string.isRequired,
   birthday: PropTypes.string.isRequired,
   bio: PropTypes.string,
-  bio: PropTypes.double.isRequired,
+  enemies: PropTypes.number.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -72,7 +72,7 @@ const ProfileCardContainer = withTracker(() => ({
   hometown: Meteor.user() ? Meteor.user().profile.hometown : '',
   birthday: Meteor.user() ? Meteor.user().profile.birthday : '',
   bio: Meteor.user() ? Meteor.user().profile.bio : '',
-  enemies: Meteor.user() ? Meteor.user().profile.enemies : 0,
+  enemies: Meteor.user() ? Meteor.user().profile.enemies : '',
 }))(ProfileCard);
 
 /** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */

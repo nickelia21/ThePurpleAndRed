@@ -20,7 +20,14 @@ const PostSchema = new SimpleSchema({
     dislikes: Number,
   }]
 }, {
-  tracker: Tracker,
+    tracker: Tracker,
+  });
+
+/** Deny all client-side updates on the Posts collection  */
+Posts.deny({
+  insert() { return true; },
+  update() { return true; },
+  remove() { return true; },
 });
 
 /** Attach this schema to the collection. */

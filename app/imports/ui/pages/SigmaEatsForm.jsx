@@ -33,7 +33,7 @@ class SigmaEatsForm extends React.Component {
       Bert.alert({
         type: 'success',
         icon: 'fas fa-times',
-        message: 'Add succeeded! Your sigma should be arriving soon with your food.',
+        message: 'Add succeeded! Your sigma will be arriving soon with your food.',
       });
       this.formRef.reset();
     }
