@@ -5,7 +5,7 @@
     "@babel/runtime": "^7.4.5",
     "@ionic/react": "0.0.5",
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "classnames": "^2.2.6",
     "core-js": "^2.6.9",
     "graphql": "^0.8.2",
